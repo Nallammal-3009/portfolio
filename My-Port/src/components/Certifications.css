@@ -5,6 +5,18 @@
   padding: 100px 10%;
 }
 
+@media (max-width: 1024px) {
+  .certifications {
+    padding: 80px 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications {
+    padding: 60px 5%;
+  }
+}
+
 .cert-grid-lines {
   position: absolute;
   top: 0;

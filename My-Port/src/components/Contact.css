@@ -2,6 +2,7 @@
   background-color: var(--bg-secondary);
   position: relative;
   overflow: hidden;
+  padding: 100px 10%;
 }
 
 .contact-grid-lines {
@@ -11,6 +12,18 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    padding: 80px 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 5%;
+  }
 }
 
 .contact-grid-lines .line-v {
