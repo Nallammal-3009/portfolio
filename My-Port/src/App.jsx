@@ -1,5 +1,7 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -11,9 +13,23 @@ import Footer from "./components/Footer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+  if (darkMode) {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+}, [darkMode]);
+  useEffect(() => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+    easing: "ease-in-out",
+  });
+}, []);
 
   return (
-    <div className={darkMode ? "app dark-mode" : "app"}>
+    <div className={`app ${darkMode ? "dark-mode" : ""}`}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <About />
